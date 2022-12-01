@@ -170,7 +170,7 @@ Submitted JOB ID 25942540
 Submitted JOB ID 25942541
 Submitted JOB ID 25942542
 ```
-If queuing on server is horrible, you can also run each job on terminal by pasting the code below, rather than via `sh test_run.sh`\
+If queuing on server is horrible or for some reason it can't run bowtie-build (look into ERR data/TestGenomeMappability/genome/index/index_genome.ERR), best is to run each job on terminal by pasting the code below, rather than via `sh test_run.sh`\
 
 ```ruby
 bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
