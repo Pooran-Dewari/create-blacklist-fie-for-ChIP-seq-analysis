@@ -2,6 +2,8 @@
 
 ### This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq experiments.
 
+---
+
 ### Part 1: Installation
 
 #### Install umap
@@ -93,6 +95,9 @@ Throws a warning (which we can ignore) but can see that a new executable Blackli
 ls
 bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 ```
+\
+\
+\
 ---
 
 ### Part 2: Testing installation / Quick run
