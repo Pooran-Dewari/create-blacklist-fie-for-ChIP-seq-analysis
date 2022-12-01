@@ -127,18 +127,6 @@ Successfully done with creating all jobs
 The command above creates a test_run.sh file with all job details that you need to submit via the command below.
 ```
 sh test_run.sh
-Submitted JOB ID 25942530
-Submitted JOB ID 25942531
-Submitted JOB ID 25942532
-Submitted JOB ID 25942533
-Submitted JOB ID 25942534
-Submitted JOB ID 25942535
-Submitted JOB ID 25942536
-Submitted JOB ID 25942537
-Submitted JOB ID 25942539
-Submitted JOB ID 25942540
-Submitted JOB ID 25942541
-Submitted JOB ID 25942542
 ```
 I do not have SGE on my University server, so the job submission is declined, and gives me this error
 ```
@@ -154,3 +142,19 @@ Unable to run job: Job was rejected because job requests unknown queue "all.q".
 Exiting.
 ```
 To circumvent this, all we have to do is edit the file using `nano test_run.sh` and remove the `-q all.q` occurrences in the code.
+```
+sh test_run.sh
+
+Submitted JOB ID 25942530
+Submitted JOB ID 25942531
+Submitted JOB ID 25942532
+Submitted JOB ID 25942533
+Submitted JOB ID 25942534
+Submitted JOB ID 25942535
+Submitted JOB ID 25942536
+Submitted JOB ID 25942537
+Submitted JOB ID 25942539
+Submitted JOB ID 25942540
+Submitted JOB ID 25942541
+Submitted JOB ID 25942542
+```
