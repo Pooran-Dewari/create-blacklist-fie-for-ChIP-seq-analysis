@@ -151,6 +151,9 @@ Unable to run job: Job was rejected because job requests unknown queue "all.q".
 Exiting.
 ```
 To circumvent this, all we have to do is edit the file using `nano test_run.sh` and remove the `-q all.q` occurrences in the code.
+Please do note that when you use conda environment (such as `conda activate umap_env` above), `bowtie` can be run from any location, so you will have to edit the test_run.sh for bowtie-build location\
+change `/bowtie-build` to `bowtie-build`\
+If you don't make the change above, bowtie indexing would fail!! After making these changes, submit jobs via command below.
 ```
 sh test_run.sh
 
@@ -167,5 +170,26 @@ Submitted JOB ID 25942540
 Submitted JOB ID 25942541
 Submitted JOB ID 25942542
 ```
-Please do note that when you use conda environment (such as `conda activate umap_env` above), `bowtie` can be run from any location, so you will have to edit the test_run.sh for bowtie-build location\
-change `/bowtie-build` to `bowtie-build`
+If queuing on server is horrible, you can also run each job on terminal by pasting the code below, rather than via `sh test_run.sh`\
+
+```ruby
+bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
+
+#should output something like this
+Getting block 7 of 7
+  Reserving size (28) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:00
+```
