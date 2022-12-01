@@ -167,3 +167,5 @@ Submitted JOB ID 25942540
 Submitted JOB ID 25942541
 Submitted JOB ID 25942542
 ```
+Please do note that when you use conda environment (such as `conda activate umap_env` above), `bowtie` can be run from any location, so you will have to edit the test_run.sh for bowtie-build location\
+change `/bowtie-build` to `bowtie-build`
