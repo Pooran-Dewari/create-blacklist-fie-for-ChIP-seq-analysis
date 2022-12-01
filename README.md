@@ -2,6 +2,8 @@
 
 ### This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq experiments.
 
+### Part 1: Installation
+
 #### Install umap
 umap is available [on github](https://github.com/hoffmangroup/umap) but I would strongly advise install using [conda](https://anaconda.org/bioconda/umap) (because it requires some old builds and dependencies, e.g. python2.7 and bowtie1).
 \
@@ -93,7 +95,9 @@ bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 ```
 ---
 
-### Running umap
+### Part 2: Testing installation / Quick run
+
+#### Running umap
 
 ```ruby
 conda activate umap_env
