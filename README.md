@@ -95,3 +95,62 @@ bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 
 ### Running umap
 
+```ruby
+conda activate umap_env
+git clone https://github.com/hoffmangroup/umap.git
+cd umap
+python setup.py install  # need to do this only once
+
+cd umap
+python ubismap.py -h
+python ubismap.py data/genome.fa data/chrsize.tsv data/TestGenomeMappability all.q $BOWTIEDIR/bowtie-build --kmer 8 12 -write_script test_run.sh
+```
+The command above should output this:
+```
+120 Jobs will be run simultaneously at each step
+Started copying/reverse complementing/converting
+Umap genome is being processed
+Reverse complementation: False
+Nucleotide conversion: None
+
+>chr1 started at 2022-12-01 15:20:32.753554
+ATCGAATCGAATCGAATCGAATCGAATCGA
+
+>chr2 started at 2022-12-01 15:20:32.755993
+Indexing the genome started at 2022-12-01 15:20:32.756344
+job id $WAITID from indexing genome
+Done with indexing at 2022-12-01 15:20:32.758889
+Jobs submitted for k8
+Jobs submitted for k12
+Successfully done with creating all jobs
+```
+The command above creates a test_run.sh file with all job details that you need to submit via the command below.
+```
+sh test_run.sh
+Submitted JOB ID 25942530
+Submitted JOB ID 25942531
+Submitted JOB ID 25942532
+Submitted JOB ID 25942533
+Submitted JOB ID 25942534
+Submitted JOB ID 25942535
+Submitted JOB ID 25942536
+Submitted JOB ID 25942537
+Submitted JOB ID 25942539
+Submitted JOB ID 25942540
+Submitted JOB ID 25942541
+Submitted JOB ID 25942542
+```
+I do not have SGE on my University server, so the job submission is declined, and gives me this error
+```
+Unable to run job: Job was rejected because job requests unknown queue "all.q".
+Exiting.
+Submitted JOB ID 
+Unable to run job: Job was rejected because job requests unknown queue "all.q".
+Exiting.
+Submitted JOB ID 
+qsub: ERROR! Wrong jid_hold list format "," specified to -hold_jid option
+Submitted JOB ID 
+Unable to run job: Job was rejected because job requests unknown queue "all.q".
+Exiting.
+```
+To circumvent this, all we have to do is edit the file using `nano test_run.sh` and remove the `-q all.q` occurrences in the code.
