@@ -94,11 +94,11 @@ Throws a warning (which we can ignore) but can see that a new executable Blackli
 ```ruby
 ls
 bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
+
 ```
-\
-\
-\
+
 ---
+
 
 ### Part 2: Testing installation / Quick run
 
