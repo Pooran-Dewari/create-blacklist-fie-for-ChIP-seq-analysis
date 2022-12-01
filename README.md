@@ -1,10 +1,11 @@
 ## Installation and running umap and blacklist packages for ChIP-seq
 
-#### This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq experiments.
+### This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq experiments.
 
 #### Install umap
 umap is available [on github](https://github.com/hoffmangroup/umap) but I would strongly advise install using [conda](https://anaconda.org/bioconda/umap) (because it requires some old builds and dependencies, e.g. python2.7 and bowtie1).
 
+---
 
 #### Compile Blacklist
 Blacklist can be installed using [conda](https://anaconda.org/bioconda/encode-blacklist) too, but (I think) it strictly requires one of the mappability kmers  of size <=36, therefore, if you don't have kmer mappability data for 36, the Blacklist would seemingly run fine but will spit out [entire chr as high signal region](https://github.com/Boyle-Lab/Blacklist/issues/32). The only way to circumvent this is to edit line 149 of the blacklist.cpp [file](https://github.com/Boyle-Lab/Blacklist/blob/master/blacklist.cpp) to one of the kmers you used to create mappability files, prior to 'build & make' manually.
@@ -63,4 +64,7 @@ Throws a warning (which we can ignore) but can see that a new executable Blackli
 ls
 bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 ```
+---
+
+### Running umap
 
