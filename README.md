@@ -4,7 +4,34 @@
 
 #### Install umap
 umap is available [on github](https://github.com/hoffmangroup/umap) but I would strongly advise install using [conda](https://anaconda.org/bioconda/umap) (because it requires some old builds and dependencies, e.g. python2.7 and bowtie1).
+\
+\
+Create new conda environment umap_env & install umap with all dependencies.
+\
+\
+`conda create -n umap_env umap`
 
+```ruby
+The following NEW packages will be INSTALLED:
+
+bowtie             bioconda/linux-64::bowtie-1.1.2-py27_2
+.
+.
+.
+numpy              conda-forge/linux-64::numpy-1.16.5-py27h95a1406_0
+pandas             conda-forge/linux-64::pandas-0.24.2-py27hb3f55d8_0
+pip                conda-forge/noarch::pip-20.1.1-pyh9f0ad1d_0
+python             conda-forge/linux-64::python-2.7.15-h5a48372_1011_cpython
+
+# To activate this environment, use
+#
+#     $ conda activate umap_env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+```
 ---
 
 #### Compile Blacklist
