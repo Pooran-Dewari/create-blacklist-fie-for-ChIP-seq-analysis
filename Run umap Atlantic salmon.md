@@ -79,7 +79,7 @@ du -sh data/TestGenomeMappability/genome/*
 
 ###### 2.4 Run bowtie for --kmer 100
 For bowtie alignment, we need the location of bowtie directory. I can't find location of bowtie package in conda environment, therefore, need to load
-bowtie module on server and then use `which bowtie` to find location. This location (without bowtie bit at the end) needs to go into the script below.
+bowtie module on server and then use `which bowtie` to find location. This location (without bowtie bit at the end) needs to go into the run_bowtie_100.sh script.
 ```ruby
 # this bit is just to find the location of bowtie
 module load igmm/apps/bowtie/1.1.2
