@@ -1,7 +1,8 @@
 ## This is the documentation of how I created mappability files for the atlantic salmon genome
 
 #### 1. Download chromosome fasta files from [ensembl](https://ftp.ensembl.org/pub/release-108/fasta/salmo_salar/dna/) and prepare genome.fa file
-Download all fasta files from Ensembl by running the get_fasta.sh script
+Download all fasta files from Ensembl by running the get_fasta.sh script\
+\
 `sh get_fasta.sh`
 
 ##### 1.1 Extract fasta gz files
