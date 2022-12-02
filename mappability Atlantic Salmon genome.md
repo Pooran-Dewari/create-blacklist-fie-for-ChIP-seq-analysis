@@ -5,13 +5,9 @@ Download all fasta files from Ensembl by running the get_fasta.sh script
 `sh get_fasta.sh`
 
 ##### 1.1 Extract fasta gz files
-```ruby
-for file in *fa.gz
-do
- echo "now gunzipping $file"
- gunzip $file
-done;
-```
+
+`sh extract_fasta.sh`
+
 ##### 1.2 Get chromosome sizes and save
 ```ruby
 grep '>' *.fa | awk '/[0-9]{5}/{ print $3 }' | awk -F':' '{print "chr"$3"\t"$5}' > chrsize.tsv
