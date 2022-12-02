@@ -61,12 +61,12 @@ e.g. change fasta header for chromosome 1 to `>chr1`
 
 ---
 
-## 2. Run umap on University Eddie server
+#### 2. Run umap on University Eddie server
 
 ##### 2.1 Generate job schedule
 
 working directory: /exports/eddie/scratch/pdewari/umap_salmon/umap/umap
-```
+```ruby
 screen -S umap_all
 conda activate umap_env
 python --version
@@ -84,9 +84,11 @@ python ubismap.py data/genome.fa data/chrsize.tsv data/TestGenomeMappability all
 #can be run one job at a time manually via bash
 #I will run index genome bit manually as it doesn't need multi-cpus
 ```
-##### index genome
-```
+##### 2.2 Index genome
+
+```ruby
 #make sure you have bowtie1 available (either via conda envirnoment or by module load)
+
 bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
 
 Total time for backward call to driver() for mirror index: 01:14:01
@@ -103,20 +105,31 @@ du -sh data/TestGenomeMappability/genome/*
 686M	data/TestGenomeMappability/genome/Umap_bowtie.ind.rev.1.ebwt
 298M	data/TestGenomeMappability/genome/Umap_bowtie.ind.rev.2.ebwt
 ```
-............................................................................................................................................
-#get kmers
-#first check how many job ids we need..  2512, the file below has header so no. of lines - 1 for header. see below
-wc -l data/TestGenomeMappability/chrsize_index.tsv 
-2513 data/TestGenomeMappability/chrsize_index.tsv
+##### 2.3 get kmers by submitting the script below
+###### 2.3.1 for --kmer 100
 
-run via getkmer_bash.sh, below
-********************************
-for i in {1..2512};
-do
-    python get_kmers.py data/TestGenomeMappability/chrsize.tsv data/TestGenomeMappability/kmers/k100 data/TestGenomeMappability/chrs data/TestGenomeMappability/chrsize_index.tsv -job_id $i --kmer k100
-    echo "done with $i!!"
-done
-**************************
-. getkmer_bash.sh 
-Created all sequences for chr10:1-1000000
-done with 1!!
+`qsub kmer_100_job.sh`
+
+```ruby
+#contents of kmer_100_job.sh
+
+#! /bin/bash
+
+#$ -V -cwd
+#$ -l h_rt=150:00:00
+#$ -l h_vmem=15G
+#$ -pe sharedmem 1
+#$ -P roslin_macqueen_lab
+#$ -t 1-2513
+#$ -tc 10
+
+module load anaconda
+source activate umap_env #this is the environment with python2.2.15
+
+echo "Task id is $SGE_TASK_ID"
+
+python get_kmers.py data/TestGenomeMappability/chrsize.tsv data/TestGenomeMappability/kmers/k100 data/TestGenomeMappability/chrs data/TestGenomeMappability/chrsize_index.tsv -job_id $SGE_TASK_ID --kmer k100
+
+echo "done with $SGE_TASK_ID!!"
+```
+
