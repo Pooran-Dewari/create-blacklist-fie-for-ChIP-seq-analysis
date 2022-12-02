@@ -77,4 +77,8 @@ du -sh data/TestGenomeMappability/genome/*
 
 `qsub kmer_100_job.sh`
 
+###### 2.4 Run bowtie for --kmer 100
+For bowtie alignment, we need to location of bowtie directory. I can't find location of bowtie package in conda environment, therefore, need to load
+bowtie module on server and then use `which bowtie` to find location. This location (without bowtie bit at the end) needs to go into the script below.
 
+`qsub run_bowtie_100.sh`
