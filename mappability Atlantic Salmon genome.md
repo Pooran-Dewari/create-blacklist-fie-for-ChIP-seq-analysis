@@ -60,6 +60,7 @@ python ubismap.py data/genome.fa data/chrsize.tsv data/TestGenomeMappability all
 ```ruby
 # Make sure you have bowtie1 available (either via conda envirnoment or by module load)
 # We are still inside the screen umap_all and using conda env
+
 bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
 
 Total time for backward call to driver() for mirror index: 01:14:01
@@ -67,6 +68,7 @@ real    151m54.744s
 user    143m2.874s
 sys     0m19.801s
 
+# check the contents of genome/ ; successful indexing should create six ebwt files
 du -sh data/TestGenomeMappability/genome/*
 2.4G	data/TestGenomeMappability/genome/genome.fa
 686M	data/TestGenomeMappability/genome/Umap_bowtie.ind.1.ebwt
