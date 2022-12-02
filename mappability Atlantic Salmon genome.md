@@ -1,6 +1,6 @@
 ## This is the documentation of how I created mappability files for the atlantic salmon genome
 
-#### 1. Download chromosome fasta files from [ensembl](https://ftp.ensembl.org/pub/release-108/fasta/salmo_salar/dna/) 
+#### 1. Download chromosome fasta files from [ensembl](https://ftp.ensembl.org/pub/release-108/fasta/salmo_salar/dna/) and prepare genome.fa file
 ```ruby
 for file in {1..29}
 do
@@ -54,35 +54,39 @@ chr9	161282225
 ```
 
 ##### 1.3 Manually change fasta header in each file into chr notation
-e.g. change fasta header to
->chr1
+e.g. change fasta header for chromosome 1 to `>chr1`
 
 ##### 1.4 Merge all chr fasta into one file
 `cat *.fa > genome.fa`
 
-##########################################
-Now run umap
-1 Dec 2022
+---
 
-wd: /exports/eddie/scratch/pdewari/umap_salmon/umap/umap
+## 2. Run umap on University Eddie server
 
+##### 2.1 Generate job schedule
+
+working directory: /exports/eddie/scratch/pdewari/umap_salmon/umap/umap
+```
 screen -S umap_all
-
 conda activate umap_env
-$ python --version
-Python 2.7.15
-$ bowtie --version
-bowtie version 1.1.2
+python --version
+#Python 2.7.15
+bowtie --version
+#bowtie version 1.1.2
 
-# running via conda env, so no need to declare location of bowtie-build
-# if not using conda, just load a bowtie module, find where it is 'which bowtie' and then use that location
+#running via conda env, so no need to declare location of bowtie-build
+#if not using conda, just load a bowtie module, find where it is 'which bowtie' and then use that location
 
-# inititate umap to create jobs
+#inititate umap to create jobs
 python ubismap.py data/genome.fa data/chrsize.tsv data/TestGenomeMappability all.q bowtie-build --kmer 100 150 -write_script test_run.sh
 
-#now run each job inside test_run.sh manually via bash
-............................................................................................................................................
-#index genome
+#this creates test_run.sh file with all jobs/tasks in it, these can be submitted to server directly, or
+#can be run one job at a time manually via bash
+#I will run index genome bit manually as it doesn't need multi-cpus
+```
+##### index genome
+```
+#make sure you have bowtie1 available (either via conda envirnoment or by module load)
 bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
 
 Total time for backward call to driver() for mirror index: 01:14:01
@@ -98,7 +102,7 @@ du -sh data/TestGenomeMappability/genome/*
 596M	data/TestGenomeMappability/genome/Umap_bowtie.ind.4.ebwt
 686M	data/TestGenomeMappability/genome/Umap_bowtie.ind.rev.1.ebwt
 298M	data/TestGenomeMappability/genome/Umap_bowtie.ind.rev.2.ebwt
-
+```
 ............................................................................................................................................
 #get kmers
 #first check how many job ids we need..  2512, the file below has header so no. of lines - 1 for header. see below
