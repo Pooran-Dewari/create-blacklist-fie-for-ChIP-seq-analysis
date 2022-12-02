@@ -8,7 +8,7 @@ do
   wget -c https://ftp.ensembl.org/pub/release-108/fasta/salmo_salar/dna/Salmo_salar.Ssal_v3.1.dna_sm.primary_assembly.$file.fa.gz
 done
 ```
-##### 1.1 unzip gz files
+##### 1.1 Extract fasta gz files
 ```ruby
 for file in *fa.gz
 do
@@ -51,15 +51,15 @@ chr6	96060288
 chr7	68862998
 chr8	28860523
 chr9	161282225
+```
 
-# manually edit the first line of each fasta into chr notation
+##### 1.3 Manually change fasta header in each file into chr notation
 e.g. change fasta header to
 >chr1
->chr2
 
-# merge all chr  fasta into one
-cat *.fa > genome.fa
-```
+##### 1.4 Merge all chr fasta into one file
+`cat *.fa > genome.fa`
+
 ##########################################
 Now run umap
 1 Dec 2022
