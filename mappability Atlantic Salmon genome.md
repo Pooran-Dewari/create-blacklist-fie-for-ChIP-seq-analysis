@@ -20,37 +20,6 @@ done;
 ```ruby
 grep '>' *.fa | awk '/[0-9]{5}/{ print $3 }' | awk -F':' '{print "chr"$3"\t"$5}' > chrsize.tsv
 
-# check the contents of tsv file
-cat chrsize.tsv
-chr10	125877811
-chr11	111868677
-chr12	101677876
-chr13	114417674
-chr14	101980477
-chr15	110670232
-chr16	96486271
-chr17	87489397
-chr18	84084598
-chr19	88107222
-chr1	174498729
-chr20	96847506
-chr21	59819933
-chr22	63823863
-chr23	52460201
-chr24	49354470
-chr25	54385492
-chr26	55994222
-chr27	45305548
-chr28	41468476
-chr29	43051128
-chr2	95481959
-chr3	105780080
-chr4	90536438
-chr5	92788608
-chr6	96060288
-chr7	68862998
-chr8	28860523
-chr9	161282225
 ```
 
 ##### 1.3 Manually change fasta header in each file into chr notation
@@ -111,29 +80,6 @@ du -sh data/TestGenomeMappability/genome/*
 
 ###### 2.3.1 for --kmer 100
 
-
 `qsub kmer_100_job.sh`
 
-```ruby
-#contents of kmer_100_job.sh
-
-#! /bin/bash
-
-#$ -V -cwd
-#$ -l h_rt=150:00:00
-#$ -l h_vmem=15G
-#$ -pe sharedmem 1
-#$ -P roslin_macqueen_lab
-#$ -t 1-2513
-#$ -tc 10
-
-module load anaconda
-source activate umap_env #this is the environment with python2.2.15
-
-echo "Task id is $SGE_TASK_ID"
-
-python get_kmers.py data/TestGenomeMappability/chrsize.tsv data/TestGenomeMappability/kmers/k100 data/TestGenomeMappability/chrs data/TestGenomeMappability/chrsize_index.tsv -job_id $SGE_TASK_ID --kmer k100
-
-echo "done with $SGE_TASK_ID!!"
-```
 
