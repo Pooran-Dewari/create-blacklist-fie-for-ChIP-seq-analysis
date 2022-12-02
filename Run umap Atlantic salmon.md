@@ -84,7 +84,7 @@ bowtie module on server and then use `which bowtie` to find location. This locat
 # this bit is just to find the location of bowtie
 module load igmm/apps/bowtie/1.1.2
 which bowtie
-#/exports/igmm/software/pkg/el7/apps/bowtie/1.1.2/bowtie #use this location without the 'bowtie' at the end
+/exports/igmm/software/pkg/el7/apps/bowtie/1.1.2/bowtie #use this location without the 'bowtie' at the end
 ```
 Run bowtie alignment for 100 kmers by submitting job using the command below
 `qsub run_bowtie_100.sh`
