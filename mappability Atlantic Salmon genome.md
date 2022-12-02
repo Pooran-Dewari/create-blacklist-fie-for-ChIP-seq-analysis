@@ -74,21 +74,23 @@ python --version
 bowtie --version
 #bowtie version 1.1.2
 
-#running via conda env, so no need to declare location of bowtie-build
-#if not using conda, just load a bowtie module, find where it is 'which bowtie' and then use that location
+# Running via conda env, so no need to declare location of bowtie-build
+# If not using conda, just load a bowtie module, find where it is 'which bowtie' and then use that location
 
-#inititate umap to create jobs
+# Inititate umap to create jobs
 python ubismap.py data/genome.fa data/chrsize.tsv data/TestGenomeMappability all.q bowtie-build --kmer 100 150 -write_script test_run.sh
 
-#this creates test_run.sh file with all jobs/tasks in it, these can be submitted to server directly, or
-#can be run one job at a time manually via bash
-#I will run index genome bit manually as it doesn't need multi-cpus
+# This creates test_run.sh file with all jobs/tasks in it, these can be submitted to server directly, or
+# Can be run one job at a time manually via bash
+# For some reasons, when I submit test_run.sh on server, it fails to create kmers, presumably because it force uses python3
+# Therefore, I have to submit each job in test_run.sh manually
+# Have a good look at the contents of test_run.sh and run jobs manually (we will still use qsub to submit individual jobs)!!
 ```
 ##### 2.2 Index genome
 
 ```ruby
-#make sure you have bowtie1 available (either via conda envirnoment or by module load)
-
+# Make sure you have bowtie1 available (either via conda envirnoment or by module load)
+# We are still inside the screen umap_all and using conda env
 bowtie-build data/TestGenomeMappability/genome/genome.fa data/TestGenomeMappability/genome/Umap_bowtie.ind
 
 Total time for backward call to driver() for mirror index: 01:14:01
@@ -106,7 +108,9 @@ du -sh data/TestGenomeMappability/genome/*
 298M	data/TestGenomeMappability/genome/Umap_bowtie.ind.rev.2.ebwt
 ```
 ##### 2.3 get kmers by submitting the script below
+
 ###### 2.3.1 for --kmer 100
+
 
 `qsub kmer_100_job.sh`
 
