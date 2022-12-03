@@ -115,7 +115,8 @@ This script will unify all unique alignments for each chromosomes and write them
 ```ruby
 qsub unify_100_job.sh
 ```
-\
+k100/ contents after unify job execution is shown below.
+
 ```ruby
 ls data/TestGenomeMappability/kmers/k100/ -alht | head -5
 total 19G
