@@ -162,3 +162,42 @@ chr7.k100.uint8.unique.gz
 chr8.k100.uint8.unique.gz
 chr9.k100.uint8.unique.gz
 ```
+##### 2.7 Combine uint8 mappability files for all kmers
+In the last step, we need to combine mkers mappability files for each of the 1:29 chromosomes. This would create one combined uint8 mappability file for each chromosome, the outputs are stored in globalmap directory.
+```ruby
+sh combine_100_150_uint.sh
+```
+After these files have been moved, each kmer directory will have just the uint8 files in it, one gz file for each chromosome. For example, contents of k100/ shown below.
+
+```ruby
+ls data/TestGenomeMappability/kmers/globalmap_k100tok150/ -lh
+total 19M
+-rw-r--r-- 1 pdewari eddie_users 894K Dec  3 12:05 chr11.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 738K Dec  3 12:05 chr12.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 732K Dec  3 12:06 chr13.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 698K Dec  3 12:06 chr14.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 767K Dec  3 12:05 chr15.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 720K Dec  3 12:06 chr16.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 798K Dec  3 12:06 chr17.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 633K Dec  3 12:05 chr18.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 595K Dec  3 12:06 chr19.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 1.2M Dec  3 12:06 chr1.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 642K Dec  3 12:06 chr20.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 399K Dec  3 12:07 chr21.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 408K Dec  3 12:07 chr22.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 333K Dec  3 12:07 chr23.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 305K Dec  3 12:07 chr24.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 367K Dec  3 12:07 chr25.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 490K Dec  3 12:07 chr26.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 309K Dec  3 12:07 chr27.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 266K Dec  3 12:07 chr28.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 292K Dec  3 12:08 chr29.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 836K Dec  3 12:08 chr2.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 829K Dec  3 12:08 chr3.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 619K Dec  3 12:08 chr4.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 714K Dec  3 12:08 chr5.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 770K Dec  3 12:08 chr6.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 544K Dec  3 12:08 chr7.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 236K Dec  3 12:08 chr8.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 1.2M Dec  3 12:08 chr9.uint8.unique.gz
+```
