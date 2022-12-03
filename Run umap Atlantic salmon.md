@@ -109,3 +109,18 @@ $ ls data/TestGenomeMappability/kmers/k100/*bowtie.gz -alth | head -4
 -rw-r--r-- 1 pdewari eddie_users 3.6M Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2508.100.bowtie.gz
 -rw-r--r-- 1 pdewari eddie_users 3.8M Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2509.100.bowtie.gz
 ```
+##### 2.5 Unify bowtie alignments for --kmer 100
+
+This script will unify all unique alignments for each chromosomes and write them into uint8.unique mappability files. We have total 29 chromosomes, so total taks submitted will be 1:29. Submit jobs via `unify_100_job.sh` to unify bowtie alignments for --kmer 100.
+```ruby
+qsub unify_100_job.sh
+```
+\
+```ruby
+ls data/TestGenomeMappability/kmers/k100/ -alht | head -5
+total 19G
+-rw-r--r-- 1 pdewari eddie_users 956K Dec  3 11:25 chr9.k100.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 521K Dec  3 11:24 chr4.k100.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 638K Dec  3 11:24 chr6.k100.uint8.unique.gz
+-rw-r--r-- 1 pdewari eddie_users 589K Dec  3 11:24 chr5.k100.uint8.unique.gz
+```
