@@ -129,10 +129,36 @@ total 19G
 ```ruby
 sh mv_to_temps.sh
 ```
+After these files have been moved, each kmer directory will have just the uin8 files in it, one gz file for each chromosome. For example, contents of k100/ shown below.
 ```ruby
-# move kmer and bowtie gz files to TEMPs
-mv data/TestGenomeMappability/kmers/k100/*kmer* data/TestGenomeMappability/kmers/k100/TEMPs
-mv data/TestGenomeMappability/kmers/k100/*bowtie* data/TestGenomeMappability/kmers/k100/TEMPs
-mv data/TestGenomeMappability/kmers/k150/*kmer* data/TestGenomeMappability/kmers/k150/TEMPs
-mv data/TestGenomeMappability/kmers/k150/*bowtie* data/TestGenomeMappability/kmers/k150/TEMPs
+ls data/TestGenomeMappability/kmers/k100/ -1 
+chr10.k100.uint8.unique.gz
+chr11.k100.uint8.unique.gz
+chr12.k100.uint8.unique.gz
+chr13.k100.uint8.unique.gz
+chr14.k100.uint8.unique.gz
+chr15.k100.uint8.unique.gz
+chr16.k100.uint8.unique.gz
+chr17.k100.uint8.unique.gz
+chr18.k100.uint8.unique.gz
+chr19.k100.uint8.unique.gz
+chr1.k100.uint8.unique.gz
+chr20.k100.uint8.unique.gz
+chr21.k100.uint8.unique.gz
+chr22.k100.uint8.unique.gz
+chr23.k100.uint8.unique.gz
+chr24.k100.uint8.unique.gz
+chr25.k100.uint8.unique.gz
+chr26.k100.uint8.unique.gz
+chr27.k100.uint8.unique.gz
+chr28.k100.uint8.unique.gz
+chr29.k100.uint8.unique.gz
+chr2.k100.uint8.unique.gz
+chr3.k100.uint8.unique.gz
+chr4.k100.uint8.unique.gz
+chr5.k100.uint8.unique.gz
+chr6.k100.uint8.unique.gz
+chr7.k100.uint8.unique.gz
+chr8.k100.uint8.unique.gz
+chr9.k100.uint8.unique.gz
 ```
