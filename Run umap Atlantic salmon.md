@@ -129,7 +129,7 @@ total 19G
 ```ruby
 sh mv_to_temps.sh
 ```
-After these files have been moved, each kmer directory will have just the uin8 files in it, one gz file for each chromosome. For example, contents of k100/ shown below.
+After these files have been moved, each kmer directory will have just the uint8 files in it, one gz file for each chromosome. For example, contents of k100/ shown below.
 ```ruby
 ls data/TestGenomeMappability/kmers/k100/ -1 
 chr10.k100.uint8.unique.gz
