@@ -75,8 +75,10 @@ du -sh data/TestGenomeMappability/genome/*
 
 ###### 2.3.1 for --kmer 100
 
-`qsub kmer_100_job.sh`
+`qsub kmer_100_job.sh` \
+\
 k100/ contents after kmer generation is shown below.
+
 ```ruby
 $ ls data/TestGenomeMappability/kmers/k100/*kmer.gz -alth | head -4
 -rw-r--r-- 1 pdewari eddie_users 3.5M Dec  2 16:44 data/TestGenomeMappability/kmers/k100/chr9.2510.100.kmer.gz
@@ -95,9 +97,11 @@ which bowtie
 /exports/igmm/software/pkg/el7/apps/bowtie/1.1.2/bowtie #use this location without the 'bowtie' at the end
 ```
 Run bowtie alignment for 100 kmers by submitting job using the command below
-`qsub run_bowtie_100.sh`
-For 2512 tasks, it took around 3-4 hours to finish the jobs.\
+`qsub run_bowtie_100.sh` \
+For 2512 tasks, it took around 3-4 hours to finish the jobs.
+\
 k100/ contents after bowtie alignment is shown below.
+
 ```ruby
 $ ls data/TestGenomeMappability/kmers/k100/*bowtie.gz -alth | head -4
 -rw-r--r-- 1 pdewari eddie_users 3.5M Dec  3 03:14 data/TestGenomeMappability/kmers/k100/chr9.2449.100.bowtie.gz
