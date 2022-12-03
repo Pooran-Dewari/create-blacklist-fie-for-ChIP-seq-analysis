@@ -126,7 +126,9 @@ total 19G
 -rw-r--r-- 1 pdewari eddie_users 589K Dec  3 11:24 chr5.k100.uint8.unique.gz
 ```
 ##### 2.6 Move kmer and bowtie gz files to TEMPs
-
+```ruby
+sh mv_to_temps.sh
+```
 ```ruby
 # move kmer and bowtie gz files to TEMPs
 mv data/TestGenomeMappability/kmers/k100/*kmer* data/TestGenomeMappability/kmers/k100/TEMPs
