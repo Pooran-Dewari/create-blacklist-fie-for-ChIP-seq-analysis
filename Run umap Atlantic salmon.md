@@ -1,5 +1,15 @@
 ## This is the documentation of how I created mappability files for the atlantic salmon genome
 
+```mermaid
+flowchart TD
+    A[do something] --> B{alright};
+    B -- Yes --> C[just do not];
+    B -- No --> D[ok run this script];
+    C ---> E[Enjoy the weekend];
+    D ---> E[ok boss]
+```
+\
+
 #### 1. Download chromosome fasta files from [ensembl](https://ftp.ensembl.org/pub/release-108/fasta/salmo_salar/dna/) and prepare genome.fa file
 Download all fasta files from Ensembl by running the get_fasta.sh script\
 \
