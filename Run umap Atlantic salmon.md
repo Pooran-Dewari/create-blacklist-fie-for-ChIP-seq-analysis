@@ -88,3 +88,18 @@ which bowtie
 ```
 Run bowtie alignment for 100 kmers by submitting job using the command below
 `qsub run_bowtie_100.sh`
+For 2512 tasks, it took around 3-4 hours to finish the jobs.\
+Contents after bowtie alignment below.\
+```
+$ ls data/TestGenomeMappability/kmers/k100/*bowtie.gz -alth | head
+-rw-r--r-- 1 pdewari eddie_users 3.5M Dec  3 03:14 data/TestGenomeMappability/kmers/k100/chr9.2449.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.0M Dec  3 03:14 data/TestGenomeMappability/kmers/k100/chr9.2450.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.6M Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2508.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.8M Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2509.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.6M Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2510.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 887K Dec  3 02:45 data/TestGenomeMappability/kmers/k100/chr9.2511.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.8M Dec  3 02:44 data/TestGenomeMappability/kmers/k100/chr9.2506.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.6M Dec  3 02:44 data/TestGenomeMappability/kmers/k100/chr9.2507.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.7M Dec  3 02:44 data/TestGenomeMappability/kmers/k100/chr9.2501.100.bowtie.gz
+-rw-r--r-- 1 pdewari eddie_users 3.7M Dec  3 02:44 data/TestGenomeMappability/kmers/k100/chr9.2504.100.bowtie.gz
+```
