@@ -167,7 +167,7 @@ In the last step, we need to combine mkers mappability files for each of the 1:2
 ```ruby
 sh combine_100_150_uint.sh
 ```
-After these files have been moved, each kmer directory will have just the uint8 files in it, one gz file for each chromosome. For example, contents of k100/ shown below.
+Contents of globalmap/ shown below. These are the final mappability files that we will use for Blacklist creation.
 
 ```ruby
 ls data/TestGenomeMappability/kmers/globalmap_k100tok150/ -lh
