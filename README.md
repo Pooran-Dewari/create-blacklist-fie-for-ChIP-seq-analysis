@@ -55,7 +55,7 @@ git clone https://github.com/Boyle-Lab/Blacklist.git
 cd Blacklist/
 rm bamtools/ -r        # bamtools directory is empty, need to remove and clone it afresh
 git clone https://github.com/pezmaster31/bamtools.git
-cd Blacklist/bamtools/
+cd bamtools/
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=$(cd ..; pwd)/install ..
