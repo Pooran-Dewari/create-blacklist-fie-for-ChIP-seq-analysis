@@ -65,6 +65,8 @@ tree
 # the script below will create a bed file 'atlantic_salmon_blacklist_all.bed' & append all blacklist regions for each chromosome onto it.
 qsub blacklist_all_chr.sh
 ```
+![alt-text]()
+
 Sample contents of atlantic_salmon_blacklist_all.bed
 ```ruby
 cat atlantic_salmon_blacklist_all.bed | head
