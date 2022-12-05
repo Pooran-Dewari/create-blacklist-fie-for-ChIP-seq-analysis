@@ -81,3 +81,11 @@ chr1	5028300	5099800	High Signal Region
 chr1	5749600	5831500	High Signal Region
 
 ```
+```ruby
+#Check what percentage of the genome is in the blacklist region
+blacklist=$(cat salmon_blacklist/salmon_blacklist.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
+genome_size=2756584103
+fraction=$(printf '%.2f\n' $(echo "($blacklist *100 / $genome_size)" | bc -l))
+echo "$fraction% of the genome is in blacklist regions!!"
+# 7.53% of the genome is in blacklist regions!!
+```
