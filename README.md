@@ -194,3 +194,8 @@ Getting block 7 of 7
   100%
   Block accumulator loop time: 00:00:00
 ```
+---
+
+### Create mappability files for atlantic salmon
+
+See detailed documentation [here](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Run%20umap%20Atlantic%20salmon.md)
