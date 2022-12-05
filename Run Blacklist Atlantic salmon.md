@@ -65,9 +65,11 @@ tree
 # the script below will create a bed file 'atlantic_salmon_blacklist_all.bed' & append all blacklist regions for each chromosome onto it.
 qsub blacklist_all_chr.sh
 ```
+##### After a couple of hours!!
+
 ![alt-text](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Y9q.gif)
 
-Sample contents of atlantic_salmon_blacklist_all.bed
+Anyways, see below sample contents of atlantic_salmon_blacklist_all.bed.
 ```ruby
 cat atlantic_salmon_blacklist_all.bed | head
 # output below
@@ -83,11 +85,15 @@ chr1	5028300	5099800	High Signal Region
 chr1	5749600	5831500	High Signal Region
 
 ```
-Check what percentage of the genome is in the blacklist region
+You can also check what percentage of the genome is in the blacklist region
 ```ruby
 blacklist=$(cat atlantic_salmon_blacklist_all.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
 genome_size=2756584103
 fraction=$(printf '%.2f\n' $(echo "($blacklist *100 / $genome_size)" | bc -l))
 echo "$fraction% of the genome is in blacklist regions!!"
 # 7.53% of the genome is in blacklist regions!!
-```
+``
+
+![alt-text](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Y9q.gif)
+`
+
