@@ -67,7 +67,7 @@ qsub blacklist_all_chr.sh
 ```
 Sample contents of atlantic_salmon_blacklist_all.bed
 ```ruby
-cat atlantic_salmon_blacklist_all.txt | head
+cat atlantic_salmon_blacklist_all.bed | head
 # output below
 chr1	473600	543600	High Signal Region
 chr1	821600	919400	High Signal Region
@@ -81,9 +81,9 @@ chr1	5028300	5099800	High Signal Region
 chr1	5749600	5831500	High Signal Region
 
 ```
+Check what percentage of the genome is in the blacklist region
 ```ruby
-#Check what percentage of the genome is in the blacklist region
-blacklist=$(cat salmon_blacklist/salmon_blacklist.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
+blacklist=$(cat atlantic_salmon_blacklist_all.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
 genome_size=2756584103
 fraction=$(printf '%.2f\n' $(echo "($blacklist *100 / $genome_size)" | bc -l))
 echo "$fraction% of the genome is in blacklist regions!!"
