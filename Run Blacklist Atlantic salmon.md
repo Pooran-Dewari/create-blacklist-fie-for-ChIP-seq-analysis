@@ -1,7 +1,7 @@
 ### This document describes methodology of blacklist file creation
 
 ##### 1. Change chromosome notation for the bam files from integer to chr 
-Input bam alignment files that we have are not in chr notation, so we first need to change them to chr notation.
+My input bam alignment files are not in chr notation, so we first need to change them to chr notation.
 ```ruby
 # Header of Input bam file is below
 samtools view -H AtlanticSalmon_ChIP-Input_Brain_Immature_Female_R1* | head
