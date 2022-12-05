@@ -1,6 +1,6 @@
 ## Installation and running umap and blacklist packages for ChIP-seq
 
-The whole process of installation and execution of umap and Blacklist was painful, to put it mildly, and took solid three weeks. I thought jotting down the whole process of creating blacklist region file might be useful for anyone trying their hands on ChIP-seq analysis with non-standard genomes. This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq analysis. Good luck!
+The whole process of installation and execution of umap and Blacklist was excruciating, to put it mildly, and took solid three weeks. I thought jotting down the whole process of creating blacklist region file might be useful for anyone trying their hands on ChIP-seq analysis with non-standard genomes. This document describes how to install and run the two packages 'umap' and 'Blacklist' to generate blacklist region file for ChIP-seq analysis. Good luck!
 
 ---
 
