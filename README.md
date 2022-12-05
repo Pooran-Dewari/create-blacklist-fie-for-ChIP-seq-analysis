@@ -42,7 +42,7 @@ python             conda-forge/linux-64::python-2.7.15-h5a48372_1011_cpython
 Blacklist can be installed using [conda](https://anaconda.org/bioconda/encode-blacklist) too, but (I think) it strictly requires one of the mappability kmers  of size <=36, therefore, if you don't have kmer mappability data for 36, the Blacklist would seemingly run fine but will spit out [entire chr as high signal region](https://github.com/Boyle-Lab/Blacklist/issues/32). The only way to circumvent this is to edit line 149 of the blacklist.cpp [file](https://github.com/Boyle-Lab/Blacklist/blob/master/blacklist.cpp) to one of the kmers you used to create mappability files, prior to 'build & make' manually.
 \
 \
-For example, if my ChIP-seq read length is 150, and I created mappability files with kmers 100 150, the default conda-installed Blacklist wouldn't work. To make this work, I need to edit line 149 in the blacklist.cpp file prior to build & make.\
+For example, if my ChIP-seq read length is 150, and I created mappability files with kmers 100 150, the default conda-installed Blacklist wouldn't work. To make this work, I need to [edit](https://github.com/Boyle-Lab/Blacklist/issues/32) line 149 in the blacklist.cpp file prior to build & make.\
 from `int uniqueLength = 36; //This is arbitraty and defines how long a read needs`\
 to `int uniqueLength = 100; //This is arbitraty and defines how long a read needs`
 \
