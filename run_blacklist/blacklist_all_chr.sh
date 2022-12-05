@@ -10,7 +10,7 @@
 
 module load phys/compilers/gcc/9.4.0 # need this module for GLIBCXX
 
-output="atlantic_salmon_blacklist_all.txt"
+output="atlantic_salmon_blacklist_all.bed"
 
 touch $output
 
