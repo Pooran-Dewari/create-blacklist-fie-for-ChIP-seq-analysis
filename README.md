@@ -100,7 +100,7 @@ bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 ---
 
 
-### Part 2: Testing installation / Quick run
+### Part 2: Quick test run
 
 #### Running umap
 
