@@ -93,7 +93,8 @@ fraction=$(printf '%.2f\n' $(echo "($blacklist *100 / $genome_size)" | bc -l))
 echo "$fraction% of the genome is in blacklist regions!!"
 # 7.53% of the genome is in blacklist regions!!
 ``
+Hope this was helpful!
 
-![alt-text](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Y9q.gif)
+![alt-text](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/IAj.gif)
 `
 
