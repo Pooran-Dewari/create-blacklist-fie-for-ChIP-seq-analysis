@@ -2,11 +2,15 @@
 
 ```mermaid
 flowchart TD
-    A[do something] --> B{alright};
-    B -- Yes --> C[just do not];
-    B -- No --> D[ok run this script];
+    A[Get genome fasta file] --> B{Already in chr notation??};
+    B -- Yes --> C[Go ahead];
+    B -- No --> D[change to chr notation];
     C ---> E[Enjoy the weekend];
-    D ---> E[ok boss]
+    D ---> E[Index genome]
+    E --> F[get kmers]
+    F --> G[run bowtie]
+    G --> H[unify bowtie]
+    H --> I[combine uint8]
 ```
 \
 
