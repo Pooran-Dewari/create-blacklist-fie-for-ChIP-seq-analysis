@@ -62,10 +62,22 @@ tree
 
 ```ruby
 # <path to Blacklist executable> chr1 > chr1_blacklist.txt
-# the script below will create a bed file & append all blacklist regions for each chromosome onto it.
+# the script below will create a bed file 'atlantic_salmon_blacklist_all.bed' & append all blacklist regions for each chromosome onto it.
 qsub blacklist_all_chr.sh
 ```
-Sample of blacklist bed file
+Sample contents of atlantic_salmon_blacklist_all.bed
 ```ruby
-cat 
+cat atlantic_salmon_blacklist_all.txt | head
+# output below
+chr1	473600	543600	High Signal Region
+chr1	821600	919400	High Signal Region
+chr1	1277100	1306500	High Signal Region
+chr1	1337100	1460500	High Signal Region
+chr1	2312500	2346400	High Signal Region
+chr1	3703200	3718700	High Signal Region
+chr1	4119700	4180300	High Signal Region
+chr1	4443600	4532700	High Signal Region
+chr1	5028300	5099800	High Signal Region
+chr1	5749600	5831500	High Signal Region
+
 ```
