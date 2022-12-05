@@ -32,3 +32,35 @@ samtools view -H bam_chr/AtlanticSalmon_ChIP-Input_Brain_Immature_Female_R1* | h
 @SQ	SN:chr14	LN:101980477
 @SQ	SN:chr12	LN:101677876
 ```
+
+##### 2. Index bam files 
+Input bam needs to be indexed before running Blacklist.
+```ruby
+module load igmm/apps/samtools/1.6
+ls *.bam | xargs -n1 -P20 samtools index # -P20 Run up to 20 processes at a time
+```
+
+##### 3. Run Blacklist 
+Blacklis requires all indexed bam input files in input/ and unzipped uint8 mappability files in mappability/ directories. A sample tree is shown below.
+In theory, you would need couple of hundreds of input files for generation of meaningful blacklist regions. We used 32 inputs for Atlantic salmon blacklist creation and it seems to have worked fine. If you have fewer inputs (I suppose <10), results might not very reliable, and Blacklist might report a big fraction of the geome as being 'blacklisted'! 
+\
+Directory structure for running Blacklist programme.
+
+```ruby
+tree
+#directory structure
+├── input
+│   ├── Ss1_Input_R1_chr.bam
+│   ├── Ss1_Input_R1_chr.bam.bai
+│   ├── Ss2_Input_R1_chr.bam
+│   ├── Ss2_Input_R1_chr.bam.bai
+├── mappability
+│   ├── chr10.uint8.unique
+│   ├── chr11.uint8.unique
+│   ├── chr12.uint8.unique
+```
+
+```ruby
+# <path to Blacklist executable> chr1 > chr1_blacklist.txt
+
+```
