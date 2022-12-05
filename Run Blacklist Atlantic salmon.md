@@ -119,7 +119,8 @@ chr28
 chr29
 ```
 
-You can also check what percentage of the genome is in the blacklist region
+You can also check what percentage of the genome is in the blacklist region, the more input samples you feed in, the smaller the % gets.
+For Atlantic salmon we get approx 7.5%, not too bad with 32 inputs samples considering whole-genome duplication in salmon.
 ```ruby
 blacklist=$(cat atlantic_salmon_blacklist_all.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
 genome_size=2756584103
