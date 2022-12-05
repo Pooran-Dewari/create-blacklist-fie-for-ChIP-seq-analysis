@@ -1,6 +1,6 @@
 ### This document describes methodology of blacklist file creation
 
-##### 1. Change chromosome notation from integer to chr 
+##### 1. Change chromosome notation for the bam files from integer to chr 
 Input bam alignment files that we have are not in chr notation, so we first need to change them to chr notation.
 ```ruby
 # Header of Input bam file is below
@@ -85,6 +85,40 @@ chr1	5028300	5099800	High Signal Region
 chr1	5749600	5831500	High Signal Region
 
 ```
+```ruby
+#Check if blacklist completed successfully for all 1-29 chromosomes.
+awk '/chr/{print $1}' atlantic_salmon_blacklist_all.bed | uniq
+chr1
+chr2
+chr3
+chr4
+chr5
+chr6
+chr7
+chr8
+chr9
+chr10
+chr11
+chr12
+chr13
+chr14
+chr15
+chr16
+chr17
+chr18
+chr19
+chr20
+chr21
+chr22
+chr23
+chr24
+chr25
+chr26
+chr27
+chr28
+chr29
+```
+
 You can also check what percentage of the genome is in the blacklist region
 ```ruby
 blacklist=$(cat atlantic_salmon_blacklist_all.bed | awk -F'\t' 'BEGIN{SUM=0}{ SUM+=$3-$2 }END{print SUM}')
