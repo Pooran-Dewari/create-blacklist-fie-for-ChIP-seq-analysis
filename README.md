@@ -196,6 +196,12 @@ Getting block 7 of 7
 ```
 ---
 
-### Create mappability files for atlantic salmon
+#### Create mappability files for atlantic salmon Ssal_v3.1 (GCA_905237065.2)
 
 See detailed documentation [here](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Run%20umap%20Atlantic%20salmon.md)
+
+---
+
+#### Create blacklist bed file for atlantic salmon Ssal_v3.1 (GCA_905237065.2)
+
+See detailed documentation [here](https://github.com/Pooran-Dewari/umap-and-blacklist-ChIP-seq/blob/main/Run%20Blacklist%20Atlantic%20salmon.md)
