@@ -101,9 +101,11 @@ bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
 ./Blacklist 
 ```
 This would throw a warning/help as follows:
-Blacklist is used to generate the ENCODE blacklists for various species.
-Usage is ./Blacklist <chr>
-The program requires an input/ folder containing indexed bam files.
+\
+Blacklist is used to generate the ENCODE blacklists for various species. \
+Usage is ./Blacklist \<chr>
+\
+The program requires an input/ folder containing indexed bam files. \
 The program requires a mappability/ folder containing Umap mappability files.
 
 ---
