@@ -58,6 +58,9 @@ git clone https://github.com/pezmaster31/bamtools.git
 cd bamtools/
 mkdir build
 cd build
+```
+Before compiling the source code, make sure you have edited the line 149 in the blacklist.cpp to the desired length.
+```ruby
 cmake -DCMAKE_INSTALL_PREFIX:PATH=$(cd ..; pwd)/install ..
 make
 make install
