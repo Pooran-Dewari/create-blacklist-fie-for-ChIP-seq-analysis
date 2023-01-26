@@ -97,8 +97,14 @@ Throws a warning (which we can ignore) but can see that a new executable Blackli
 ```ruby
 ls
 bamtools  Blacklist  blacklist.cpp  demo  LICENSE  lists  Makefile  README.md
-
+# also, you could just mock run the Blacklist executable, see below
+./Blacklist 
 ```
+This would throw a warning/help as follows:
+Blacklist is used to generate the ENCODE blacklists for various species.
+Usage is ./Blacklist <chr>
+The program requires an input/ folder containing indexed bam files.
+The program requires a mappability/ folder containing Umap mappability files.
 
 ---
 
