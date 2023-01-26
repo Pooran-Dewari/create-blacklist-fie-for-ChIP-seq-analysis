@@ -179,7 +179,7 @@ chr9.k100.uint8.unique.gz
 ##### 2.7 Combine uint8 mappability files for all kmers
 In the last step, we need to combine mkers mappability files for each of the 1:29 chromosomes. This would create one combined uint8 mappability file for each chromosome, the outputs are stored in globalmap directory.
 ```ruby
-sh combine_100_150_uint.sh
+qsub combine_100_150_uint.sh
 ```
 Contents of globalmap/ shown below. These are the final mappability files that we will use for Blacklist creation.
 
